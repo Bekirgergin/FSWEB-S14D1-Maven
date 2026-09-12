@@ -1,8 +1,15 @@
+package com.workintech;
+
 import com.workintech.cylinder.Circle;
 import com.workintech.cylinder.Cylinder;
-import com.workintech.developers.*;
 import com.workintech.pool.Cuboid;
 import com.workintech.pool.Rectangle;
+import com.workintech.developers.Employee;
+import com.workintech.developers.HRManager;
+import com.workintech.developers.JuniorDeveloper;
+import com.workintech.developers.MidDeveloper;
+import com.workintech.developers.SeniorDeveloper;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,7 +21,7 @@ import java.util.Locale;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(ResultAnalyzer.class)
 public class MainTest {
@@ -33,8 +40,8 @@ public class MainTest {
     @BeforeEach
     void setUp() {
         circle = new Circle(2);
-        cylinder = new Cylinder(2,2);
-        rectangle = new Rectangle(1,2);
+        cylinder = new Cylinder(2, 2);
+        rectangle = new Rectangle(1, 2);
         cuboid = new Cuboid(1, 2, 3);
         employee = new Employee(1, "Jane Doe", 20000);
         hrManager = new HRManager(1, "John Doe", 120000);
@@ -151,7 +158,4 @@ public class MainTest {
         assertThat(midDeveloper, instanceOf(Employee.class));
         assertThat(seniorDeveloper, instanceOf(Employee.class));
     }
-
-
-
 }
